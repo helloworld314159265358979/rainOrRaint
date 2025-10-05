@@ -1,0 +1,42 @@
+:root{
+  --primary:#0d47a1;
+  --accent:#1e88e5;
+  --muted:#cfe9ff;
+  --danger:#b00020;
+}
+*{box-sizing:border-box}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: linear-gradient(180deg,#eaf6ff,#ffffff);
+  margin:0;padding:18px;color:var(--primary);
+}
+.container{max-width:1050px;margin:0 auto;padding:18px;background:#fff;border-radius:12px;box-shadow:0 10px 30px rgba(13,71,161,0.06)}
+h1{text-align:center;margin:0 0 16px 0}
+.controls{display:grid;grid-template-columns: repeat(2,1fr);gap:14px}
+.date-box,.coord-box{padding:12px;border-radius:8px;background:linear-gradient(180deg,#fbfeff,#ffffff);border:1px solid #eef8ff}
+.date-row{display:flex;gap:8px;align-items:center}
+.date-row input{width:33%;padding:8px;border-radius:6px;border:1px solid var(--muted);text-align:center}
+.coord-box input[type="range"]{width:100%;margin:6px 0}
+.coord-box input[type="number"]{width:100%;padding:8px;border-radius:6px;border:1px solid var(--muted);text-align:center}
+.muted{font-size:0.9rem;color:#666;margin-top:6px}
+.actions{display:flex;gap:12px;align-items:center;margin-top:14px}
+button{background:linear-gradient(90deg,var(--accent),var(--primary));color:#fff;border:none;padding:10px 16px;border-radius:8px;font-weight:700;cursor:pointer}
+#loadingArea{display:flex;align-items:center;gap:12px}
+#spinner{display:none;width:22px;height:22px;border-radius:50%;border:3px solid #e3f2fd;border-top-color:var(--primary);animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#timer{font-weight:700;min-width:86px;text-align:center}
+.warning{color:var(--danger);font-weight:700;margin:6px 0}
+.results{margin-top:18px}
+table{width:100%;border-collapse:collapse;margin-top:12px}
+thead{background:var(--primary);color:#fff}
+th,td{padding:8px;border:1px solid #eef6ff;text-align:center}
+.error{color:#b00020;font-weight:700}
+.info{margin-top:18px;background:#e8f6ff;padding:12px;border-radius:8px;font-size:1.05rem}
+.big{font-size:1.15rem}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;color:#fff;font-weight:700}
+.rain-none{background:#9e9e9e}
+.rain-light{background:#4fc3f7}
+.rain-moderate{background:#2196f3}
+.rain-heavy{background:#1565c0}
+
+

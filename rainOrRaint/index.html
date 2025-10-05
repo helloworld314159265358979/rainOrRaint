@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Malaysia Rainfall Forecast</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🌦 Malaysia Rainfall Forecast</h1>
+
+    <div class="controls">
+      <section class="date-box">
+        <h2>Start Date</h2>
+        <div class="date-row">
+          <input id="startYear" type="number" placeholder="YYYY" inputmode="numeric" />
+          <input id="startMonth" type="number" placeholder="MM" min="1" max="12" />
+          <input id="startDay" type="number" placeholder="DD" min="1" />
+        </div>
+        <p id="startWarning" class="warning" aria-live="polite"></p>
+      </section>
+
+      <section class="date-box">
+        <h2>End Date</h2>
+        <div class="date-row">
+          <input id="endYear" type="number" placeholder="YYYY" inputmode="numeric" />
+          <input id="endMonth" type="number" placeholder="MM" min="1" max="12" />
+          <input id="endDay" type="number" placeholder="DD" min="1" />
+        </div>
+        <p id="endWarning" class="warning" aria-live="polite"></p>
+      </section>
+
+      <section class="coord-box">
+        <h2>Latitude</h2>
+        <input id="latSlider" type="range" step="0.1" />
+        <input id="latBox" type="number" step="0.001" />
+        <p class="muted">Malaysia approx. lat: 1.0 → 7.5</p>
+      </section>
+
+      <section class="coord-box">
+        <h2>Longitude</h2>
+        <input id="lonSlider" type="range" step="0.1" />
+        <input id="lonBox" type="number" step="0.001" />
+        <p class="muted">Malaysia approx. lon: 100 → 120</p>
+      </section>
+    </div>
+
+    <div class="actions">
+      <button id="getForecast">Get Forecast</button>
+      <div id="loadingArea">
+        <div id="spinner" aria-hidden="true"></div>
+        <div id="timer">00:00:00</div>
+      </div>
+      <p id="caution" class="warning" aria-live="polite"></p>
+    </div>
+
+    <section class="results">
+      <h2>Forecast Data</h2>
+      <p id="errorMessage" class="error" role="alert"></p>
+
+      <table id="rainfallTable" aria-live="polite">
+        <thead><tr id="tableHeaderRow">
+          <th>Year</th><th>Month</th><th>Day</th><th>Precipitation (mm)</th><th>Level</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+
+      <canvas id="rainChart" aria-label="Rainfall chart" role="img"></canvas>
+    </section>
+
+    <section class="info">
+      <h3>What is Climatology?</h3>
+      <p class="big">Climatology = long-term (multi-decade) averages of weather. When requested dates are outside the available daily dataset, the app automatically uses climatology (monthly averages).</p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
